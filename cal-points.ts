@@ -1,41 +1,20 @@
 function calPoints(operations: string[]): number {
-  let res = 0;
-  let current: number[] = [];
+  const res: number[] = [];
 
-  for (let i = 0; i < operations.length; i++) {
-    switch (true) {
-      case !isNaN(Number(operations[i])): {
-        const value = Number(operations[i]);
-        res += value;
-        current.push(value);
-        break;
-      }
-      case operations[i] == "+": {
-        const lastIndex = current.length;
-        const value = current[lastIndex - 1] + current[lastIndex - 2];
-
-        res += value;
-        current.push(value);
-        break;
-      }
-      case operations[i] == "C": {
-        const lastIndex = current.length - 1;
-        res = res - Number(current[lastIndex]);
-        current.pop();
-
-        break;
-      }
-      case operations[i] == "D": {
-        const value = current[current.length - 1] * 2;
-        res += value;
-        current.push(value);
-        break;
-      }
+  for (let operation of operations) {
+    if (!Number.isNaN(+operation)) res.push(+operation);
+    if (operation === "+") {
+      res.push(res.at(-1) + res.at(-2));
+    }
+    if (operation === "C") {
+      res.pop();
+    }
+    if (operation === "D") {
+      res.push(res.at(-1) * 2);
     }
   }
-  console.log(res);
 
-  console.log(current);
+  return res.reduce((sum, item) => sum + item, 0);
 }
 
 calPoints(["5", "2", "C", "D", "+"]);
