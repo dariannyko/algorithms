@@ -1,11 +1,13 @@
 function findDuplicates(nums: number[]): number[] {
-  const map = new Map();
-  const res: number[] = [];
+  const set = new Set();
 
-  for (let number of nums) {
-    if (map.get(number) === 1) res.push(number);
-    map.set(number, (map.get(number) || 0) + 1);
-  }
+  const res = nums.filter((number) => {
+    if (set.has(number)) {
+      return true;
+    } else {
+      set.add(number);
+    }
+  });
 
   return res;
 }
