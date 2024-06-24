@@ -16,8 +16,6 @@ function greatestLetter(s: string): string {
       maxLetter = s[i].toLocaleUpperCase();
     }
   }
-  console.log(maxLetter);
-
   return maxLetter;
 }
 
