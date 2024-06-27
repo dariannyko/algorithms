@@ -7,8 +7,9 @@ function minMoves(nums: number[]): number {
 
     steps += num - min;
   }
-
+  console.log(steps)
   return steps;
 }
-
-minMoves([1, 2, 3]); // 3
+1 2 3
+minMoves([8, 9, 8]); // 3
+minMoves([4, 4, 100000000]); // 3
