@@ -1,14 +1,15 @@
 function getMinDistance(nums: number[], target: number, start: number): number {
-  let min = Infinity;
+  let right, left;
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] == target) {
-      min = Math.min(min, Math.abs(i - start));
-    }
+  right = left = start;
+
+  while (true) {
+    if (nums[right] === target) return right - start;
+    if (nums[left] === target) return start - left;
+
+    left--;
+    right++;
   }
-
-  return min;
 }
 
 getMinDistance([1, 2, 3, 4, 5], 5, 3); // 1
-
