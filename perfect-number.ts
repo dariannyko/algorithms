@@ -1,14 +1,13 @@
 function checkPerfectNumber(num: number): boolean {
-  let divisor = 1;
-  const half = Math.floor(num / 2);
+  let sum = 0;
+  const half = num / 2;
 
-  for (let i = 2; i < half; i++) {
-    if (num % i == 0) divisor += i;
+  for (let i = 1; i < half; i++) {
+    if (num % i == 0) sum += i;
   }
-  console.log(divisor + half == num);
-  console.log(divisor, half);
 
-  return divisor + half == num;
+  return sum == half;
 }
 
-checkPerfectNumber(2);
+checkPerfectNumber(2); // false
+checkPerfectNumber(28); // true
