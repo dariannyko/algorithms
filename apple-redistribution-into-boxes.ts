@@ -12,4 +12,4 @@ function minimumBoxes(apple: number[], capacity: number[]): number {
   return minBoxes;
 }
 
-console.log(minimumBoxes([1, 3, 2], [4, 3, 1, 5, 2]));
+minimumBoxes([1, 3, 2], [4, 3, 1, 5, 2]) // 2
