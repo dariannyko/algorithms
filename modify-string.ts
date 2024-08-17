@@ -1,19 +1,19 @@
-//TODO: рефактор
 const lang = ["a", "b", "c"];
 
 function modifyString(s: string): string {
-  const str_arr = s.split("");
+  const arr: string[] = s.split("");
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] == "?") {
+      const letter = lang.find(
+        (item) => item !== arr[i + 1] && item !== arr[i - 1]
+      );
 
-  for (let i = 0; i < str_arr.length; i++) {
-    if (str_arr[i] === "?") {
-      const prev = str_arr[i - 1] || "";
-      const next = str_arr[i + 1] || "";
-
-      const new_char = lang.find((char) => char !== prev && char !== next);
-
-      str_arr[i] = new_char;
+      arr[i] = letter;
     }
   }
 
-  return str_arr.join("");
+  return arr.join("");
 }
+
+modifyString("ubv?w"); // "ubvaw"
+modifyString("j?qg??b"); // "jaqgacb"
