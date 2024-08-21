@@ -6,32 +6,21 @@ function applyOperations(nums: number[]): number[] {
     }
   }
 
-  let ind = 0;
+  let ind = -1;
 
   for (let j = 0; j < nums.length; j++) {
     if (nums[j] === 0 && ind === -1) {
-      console.log(ind);
       ind = j;
-
-      //   nums[ind] = nums[j];
-      //   ind++;
     }
-    console.log(ind);
     if (nums[j] !== 0 && ind !== -1) {
       nums[ind] = nums[j];
       nums[j] = 0;
       j = ind;
       ind = -1;
     }
-
-    // if (nums[j] === 0) {
-    //   ind = j;
-    // } else {
-    //   //   nums[ind] = nums[j];
-    // }
   }
 
-  console.log(nums);
+  return nums;
 }
 
-applyOperations([1, 2, 2, 1, 1, 0]);
+applyOperations([1, 2, 2, 1, 1, 0]); // [1,4,2,0,0,0]
