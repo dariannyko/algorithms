@@ -6,17 +6,15 @@ function applyOperations(nums: number[]): number[] {
     }
   }
 
-  let ind = -1;
+  let ind = 0;
 
   for (let j = 0; j < nums.length; j++) {
-    if (nums[j] === 0 && ind === -1) {
-      ind = j;
-    }
-    if (nums[j] !== 0 && ind !== -1) {
-      nums[ind] = nums[j];
+    const value = nums[j];
+
+    if (value !== 0) {
       nums[j] = 0;
-      j = ind;
-      ind = -1;
+      nums[ind] = value;
+      ind++;
     }
   }
 
