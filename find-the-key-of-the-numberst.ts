@@ -2,9 +2,9 @@ function generateKey(num1: number, num2: number, num3: number): number {
   const nums = [num1, num2, num3];
   const maxLength = Math.max(...nums).toString().length;
 
-  const res: string[] = new Array(maxLength).fill("9");
+  const res = new Array(maxLength).fill("9");
 
-  for (let num of nums) {
+  for (const num of nums) {
     const chars = num.toString().padStart(maxLength, "0");
 
     for (let i = 0; i < chars.length; i++) {
