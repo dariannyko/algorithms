@@ -33,5 +33,5 @@ function reorderSpaces(text: string): string {
   return res + " ".repeat(diff);
 }
 
-reorderSpaces(" practice   makes   perfect"); // " practice   makes   perfect"
+reorderSpaces(" practice   makes   perfect"); // "practice   makes   perfect "
 reorderSpaces("  this   is  a sentence "); // "this   is   a   sentence"
