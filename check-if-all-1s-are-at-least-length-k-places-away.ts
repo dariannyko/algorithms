@@ -9,6 +9,6 @@ function kLengthApart(nums: number[], k: number): boolean {
   }
   return true;
 }
-// kLengthApart([0, 1, 0,0, 1, 0, 0, 1], 2);
-console.log(kLengthApart([1, 0, 1], 2));
-// console.log(kLengthApart([1, 0, 0, 1, 0, 1], 2));
+
+kLengthApart([1, 0, 1], 2);
+
