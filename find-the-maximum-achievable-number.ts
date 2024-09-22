@@ -1,4 +1,3 @@
-// todo
 function theMaximumAchievableX(num: number, t: number): number {
-  return 1;
-}
+  return num + t * 2
+};
