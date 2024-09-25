@@ -28,3 +28,7 @@ function mostCommonWord(paragraph: string, banned: string[]): string {
 mostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", [
   "hit",
 ]); // 'ball'
+
+const t = { a: 1, b: 2 };
+const set = new Set(Object.keys(t));
+console.log(set);
