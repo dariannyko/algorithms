@@ -1,7 +1,6 @@
 const addToArrayForm = (num: number[], k: number): number[] => {
   let division = k;
   const res: number[] = [];
-  console.log(0);
 
   for (let i = num.length - 1; i >= 0 || division > 0; i--) {
     if (i >= 0) division += num[i];
