@@ -24,4 +24,4 @@ function maxProduct(words: string[]): number {
   return max;
 }
 
-console.log(maxProduct(["abcw", "baz", "foo", "bar", "xtfn", "abcdef"]));
+maxProduct(["abcw", "baz", "foo", "bar", "xtfn", "abcdef"]); // 16
