@@ -4,8 +4,7 @@ function maxProfit(prices: number[]): number {
 
   for (let i = 0; i < prices.length; i++) {
     if (prices[i] < min) min = prices[i];
-
-    max = Math.max(max, prices[i] - min);
+    if (prices[i] - min > max) max = Math.max(max, prices[i] - min);
   }
 
   return max;
