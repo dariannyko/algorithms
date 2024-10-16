@@ -1,7 +1,4 @@
-// TODO:
 function kidsWithCandies(candies: number[], extraCandies: number): boolean[] {
-  const mostCandies = Math.max(...candies);
-  return candies.map(
-    (candyAmount) => candyAmount + extraCandies >= mostCandies
-  );
+  const maxCandies = Math.max(...candies);
+  return candies.map((item) => item + extraCandies >= maxCandies);
 }
