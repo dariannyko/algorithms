@@ -1,12 +1,13 @@
-// TODO: refactor
 function majorityElement(nums: number[]): number {
-  const map: Record<number, number> = {};
+  const map = new Map();
+  const majority = Math.floor(nums.length / 2);
 
-  const majorityCount: number = Math.floor(nums.length / 2);
+  for (let num of nums) {
+    const value = (map.get(num) || 0) + 1;
 
-  for (const num of nums) {
-    map[num] = (map[num] || 0) + 1;
-
-    if (map[num] > majorityCount) return num;
+    if (value > majority) return num;
+    map.set(num, value);
   }
 }
+
+majorityElement([3, 2, 3]); // 3
