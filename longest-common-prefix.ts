@@ -1,20 +1,13 @@
-// TODO: refactor
 function longestCommonPrefix(strs: string[]): string {
-  const sortedStrs = strs.sort((a, b) => a.length - b.length);
-  console.log(sortedStrs);
-
   let prefix = strs[0];
-  let currIndex = 0;
+  let index = 0;
 
-  while (currIndex < sortedStrs.length) {
-    const isContainPrefix = sortedStrs[currIndex].startsWith(prefix);
-    console.log(isContainPrefix, sortedStrs[currIndex]);
+  while (index < strs.length) {
+    const containPrefix = strs[index].startsWith(prefix);
 
-    if (isContainPrefix) {
-      currIndex++;
+    if (containPrefix) {
+      index++;
     } else {
-      console.log(prefix);
-
       prefix = prefix.slice(0, prefix.length - 1);
     }
   }
@@ -22,4 +15,4 @@ function longestCommonPrefix(strs: string[]): string {
   return prefix;
 }
 
-longestCommonPrefix(["flower", "flow", "flight"]);
+longestCommonPrefix(["flower", "flow", "flight"]); // '"fl"
