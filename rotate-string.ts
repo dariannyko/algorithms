@@ -1,3 +1,6 @@
-function rotateString(s: string, goal: string): boolean {}
+function rotateString(s: string, goal: string): boolean {
+  return (s + s).includes(goal);
+}
 
-console.log("TODO");
+rotateString("abcde", "cdeab"); // true
+rotateString("abcde", "abced"); // false
