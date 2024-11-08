@@ -2,7 +2,7 @@ function finalValueAfterOperations(operations: string[]): number {
   let count = 0;
 
   for (let operation of operations) {
-    if (operation === "--X" || operation === "X--") {
+    if (operation[1] === "+") {
       count--;
     } else {
       count++;
@@ -11,4 +11,4 @@ function finalValueAfterOperations(operations: string[]): number {
 
   return count;
 }
-finalValueAfterOperations(["--X", "X++", "X++"]);
+finalValueAfterOperations(["--X", "X++", "X++"]); // 1
