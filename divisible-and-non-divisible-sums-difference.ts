@@ -4,7 +4,6 @@ function differenceOfSums(n: number, m: number): number {
   for (let i = 1; i <= n; i++) {
     res += i % m ? i : -i;
   }
-  console.log(res);
 
   return res;
 }
