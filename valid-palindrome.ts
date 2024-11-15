@@ -1,13 +1,28 @@
+const allowedChars = (char: string) => {
+  return (
+    (char >= "A" && char <= "Z") ||
+    (char >= "a" && char <= "z") ||
+    (char >= "0" && char <= "9")
+  );
+};
+
 function isPalindrome(s: string): boolean {
-  const string = s.replace(/[^a-zA-Z0-9]/g, "").toLocaleLowerCase();
   let start = 0;
-  let end = string.length - 1;
+  let end = s.length - 1;
 
   while (start < end) {
-    if (string[start] !== string[end]) return false;
-    start++;
-    end--;
+    if (!allowedChars(s[start])) {
+      start++;
+    } else if (!allowedChars(s[end])) {
+      end--;
+    } else {
+      if (s[start].toLowerCase() !== s[end].toLowerCase()) return false;
+      start++;
+      end--;
+    }
   }
+
+  return true;
 }
 
 isPalindrome("A man, a plan, a canal: Panama"); // true
