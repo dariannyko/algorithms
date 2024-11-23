@@ -1,12 +1,15 @@
 function isPalindrome(x: number): boolean {
   if (x < 0) return false;
 
-  const str = x.toString();
+  let reversed = 0;
+  let temporary = x;
 
-  for (let i = 0; i < Math.floor(str.length / 2); i++) {
-    if (str[i] !== str[str.length - 1 - i]) return false;
+  while (temporary > 0) {
+    reversed = reversed * 10 + (temporary % 10);
+    temporary = Math.floor(temporary / 10);
   }
-  return true;
+
+  return reversed === x;
 }
 
 isPalindrome(121); // true
