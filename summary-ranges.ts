@@ -1,17 +1,19 @@
 function summaryRanges(nums: number[]): string[] {
-  const result = [];
-  let str = "";
-
+  let res: string[] = [];
   let start = nums[0];
 
   for (let i = 1; i <= nums.length; i++) {
-    if (nums[i] - nums[i - 1] === 1) continue;
+    const prev = nums[i - 1];
 
-    str = start === nums[i - 1] ? `${start}` : `${start}->${nums[i - 1]}`;
+    if (prev + 1 === nums[i]) continue;
 
-    result.push(str);
+    const s = prev === start ? start.toString() : `${start}->${prev}`;
+
+    res.push(s);
     start = nums[i];
   }
 
-  return result;
+  return res;
 }
+
+summaryRanges([0, 1, 2, 4, 5, 7]); // ["0->2","4->5","7"]
