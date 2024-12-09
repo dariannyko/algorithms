@@ -1,23 +1,20 @@
-// TODO: refactor
-
 function jump(nums: number[]): number {
-  let jumpCount = 0,
-    availableSteps = 0,
-    currentIndex = 0;
+  let jump = 0;
+  let current = 0;
+  let max = 0;
 
   for (let i = 0; i < nums.length - 1; i++) {
-    if (nums.length - 1 <= i + nums[i]) {
-      return jumpCount + 1;
+    max = Math.max(max, i + nums[i]);
+
+    if (i === current) {
+      jump++;
+      current = max;
     }
-    availableSteps = Math.max(availableSteps, i + nums[i]);
-    if (i === currentIndex) {
-      jumpCount += 1;
-      currentIndex = availableSteps;
-    }
+
+    if (current > nums.length - 1) break;
   }
-  return jumpCount;
+  return jump;
 }
 
-jump([2, 3, 0, 1, 4]);
-// jump([2, 3, 1, 1, 4]);
-// jump([2, 3, 1]);
+jump([2, 3, 0, 1, 4]); // 2
+jump([2, 3, 1, 1, 4]); // 2
