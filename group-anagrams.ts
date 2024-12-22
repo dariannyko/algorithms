@@ -1,16 +1,19 @@
-// TODO: refactor
 function groupAnagrams(strs: string[]): string[][] {
-  var sMap = new Map();
-  for (var i = 0; i < strs.length; i++) {
-    var a1 = strs[i].split("").sort().join("");
-    var v = sMap.get(a1);
-    if (v) {
-      v.push(strs[i]);
-      sMap.set(a1, v);
+  const groupsMap = new Map();
+
+  for (let word of strs) {
+    const key = word.split("").sort().join("");
+
+    const value = groupsMap.get(key);
+    if (value) {
+      value.push(word);
+      groupsMap.set(key, value);
     } else {
-      sMap.set(a1, [strs[i]]);
+      groupsMap.set(key, [word]);
     }
   }
 
-  return [...sMap.values()];
+  return Array.from(groupsMap.values());
 }
+
+groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]);
