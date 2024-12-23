@@ -13,26 +13,3 @@ function stringHash(s: string, k: number): string {
 }
 
 stringHash("abcd", 2); // "bf"
-
-
-// function search(nums: number[], target: number): number {
-    
-//   const n = nums.length; 
-//   let start = 0;
-//   let end = n-1;
-
-//   while(start<=end){
-//       const mid = Math.floor((start+end)/2);
-//       if(nums[mid] === target)return mid;
-//       else if(nums[mid]>=nums[start]){
-//           // I am on left portion
-//           if(target>= nums[start] && target<nums[mid])end = mid-1;
-//           else start = mid+1;
-//       }else{
-//           // I am on right portion
-//           if(target>nums[mid] && target<= nums[end])start=mid+1;
-//           else end = mid-1;
-//       }
-//   }
-//   return -1;
-// };
