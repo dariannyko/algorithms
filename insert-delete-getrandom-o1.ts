@@ -1,23 +1,37 @@
 class RandomizedSet {
-  storage: Set<number>;
+  storage: Map<number, number>;
+  list: number[];
+
   constructor() {
-    this.storage = new Set();
+    this.storage = new Map();
+    this.list = [];
   }
 
   insert(val: number): boolean {
-    const prevSize = this.storage.size;
-    this.storage.add(val);
-    return prevSize !== this.storage.size;
+    if (this.storage.has(val)) return false;
+
+    this.list.push(val);
+    this.storage.set(val, this.list.length - 1);
+
+    return true;
   }
 
   remove(val: number): boolean {
-    return this.storage.delete(val);
+    const index = this.storage.get(val);
+
+    if (index !== undefined) {
+      this.list[index] = this.list[this.list.length - 1];
+      this.list.pop();
+
+      this.storage.delete(val);
+      this.storage.set(this.list[index], index);
+      return true;
+    }
+    return false;
   }
 
   getRandom(): number {
-    const arr = Array.from(this.storage);
-    const index = Math.floor(Math.random() * this.storage.size);
-
-    return arr[index];
+    const index = Math.floor(Math.random() * this.list.length);
+    return this.list[index];
   }
 }
