@@ -9,7 +9,6 @@ function minimumLength(s: string): number {
   for (let num of chars) {
     if (num) length += 2 - (num % 2);
   }
-
   return length;
 }
 
