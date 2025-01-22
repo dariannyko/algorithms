@@ -1,20 +1,20 @@
 function increasingTriplet(nums: number[]): boolean {
-  let smaller = Number.MAX_SAFE_INTEGER;
-  let bigger = Number.MAX_SAFE_INTEGER;
+  let first = Number.MAX_SAFE_INTEGER;
+  let second = Number.MAX_SAFE_INTEGER;
 
-  for (let i = 0; i < nums.length; i++) {
-    let cur = nums[i];
-    if (cur <= smaller) {
-      smaller = cur;
+  for (const num of nums) {
+    if (num <= first) {
+      first = num;
       continue;
     }
-    if (cur <= bigger) {
-      bigger = cur;
+    if (num <= second) {
+      second = num;
       continue;
     }
     return true;
   }
+
   return false;
 }
-// console.log(increasingTriplet([1, 6, 6, 4, 5]));
-console.log(increasingTriplet([20, 100, 10, 12, 5, 13]));
+
+increasingTriplet([20, 100, 10, 12, 5, 13]); // true
