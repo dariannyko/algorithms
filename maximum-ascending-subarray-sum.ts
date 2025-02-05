@@ -1,5 +1,5 @@
 function maxAscendingSum(nums: number[]): number {
-  let max = 0;
+  let max = nums[0];
   let count = nums[0];
 
   for (let i = 1; i < nums.length; i++) {
