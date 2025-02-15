@@ -1,18 +1,21 @@
 function canCompleteCircuit(gas: number[], cost: number[]): number {
-    let tot = 0,
-        res = 0,
-        tank = 0;
+  let totalGas = 0;
+  let currentGas = 0;
+  let index = 0;
 
-    for (let idx = 0; idx < gas.length; idx++) {
-        const val = gas[idx] - cost[idx];
-        tot += val;
-        tank += val;
+  for (let i = 0; i < gas.length; i++) {
+    const value = gas[i] - cost[i];
 
-        if (tot < 0) {
-            tot = 0;
-            res = idx + 1;
-        }
+    totalGas += value;
+    currentGas += value;
+
+    if (currentGas < 0) {
+      currentGas = 0;
+      index = i + 1;
     }
-    if (tank < 0) return -1;
-    return res;
+  }
+
+  return totalGas < 0 ? -1 : index;
 }
+
+canCompleteCircuit([1, 2, 3, 4, 5], [3, 4, 5, 1, 2]); // 3
