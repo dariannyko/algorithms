@@ -9,7 +9,7 @@ function mergeArrays(nums1: number[][], nums2: number[][]): number[][] {
   const res: number[][] = [];
 
   for (let key in hash) {
-    res.push([key, hash[key]]);
+    res.push([+key, hash[key]]);
   }
 
   return res;
