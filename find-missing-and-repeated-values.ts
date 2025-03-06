@@ -1,21 +1,17 @@
 function findMissingAndRepeatedValues(grid: number[][]): number[] {
-  const set = new Set<number>();
+  const count = new Array(grid.length * grid.length).fill(0);
+  const res = new Array(2).fill(0);
 
-  let repeating = 0;
-
-  for (let arr of grid) {
-    for (let num of arr) {
-      if (set.has(num)) {
-        repeating = num;
-      } else {
-        set.add(num);
-      }
+  for (let nums of grid) {
+    for (let num of nums) {
+      count[num - 1] ? (res[0] = num) : count[num - 1]++;
     }
   }
 
-  for (let i = 1; i <= set.size + 1; i++) {
-    if (!set.has(i)) return [repeating, i];
+  for (let i = 0; i < count.length; i++) {
+    if (count[i] === 0) res[1] = i + 1;
   }
+  return res;
 }
 
 findMissingAndRepeatedValues([
