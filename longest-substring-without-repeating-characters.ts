@@ -1,13 +1,21 @@
 function lengthOfLongestSubstring(s: string): number {
-  // if(s.length < 2) return s.length;
-  let i =0, j =0, max = 0;
+  let left = 0,
+    right = 0,
+    max = 0;
 
-  let mySet = new Set();
-  while(j < s.length) {
-    if(!mySet.has(s[j])) {
-      mySet.add(s[j++]);
-      max = Math.max(max, mySet.size);
-    } else mySet.delete(s[i++]);
+  let set = new Set();
+
+  while (right < s.length) {
+    if (set.has(s[right])) {
+      set.delete(s[left]);
+      left++;
+    } else {
+      set.add(s[right]);
+      max = Math.max(max, set.size);
+      right++;
+    }
   }
   return max;
 }
+
+lengthOfLongestSubstring("abcabcbb"); // 3
