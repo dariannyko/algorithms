@@ -8,6 +8,8 @@ function maximumTripletValue(nums: number[]): number {
     maxDiff = Math.max(maxDiff, max - num);
     max = Math.max(max, num);
   }
+
+  return maxTriplet;
 }
 
 maximumTripletValue([12, 6, 1, 2, 7]);
