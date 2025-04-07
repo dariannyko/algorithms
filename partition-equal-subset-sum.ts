@@ -1,5 +1,5 @@
 
-// TODO: refactor
+// !TODO: refactor
 function canPartition(nums: number[]): boolean {
     const sum = nums.reduce((a, b) => a + b, 0);
     if ((sum & 1) !== 0) return false;
