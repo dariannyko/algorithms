@@ -1,3 +1,4 @@
+// TODO: refactor
 type Fn<T> = () => Promise<T>;
 
 function promiseAll<T>(functions: Fn<T>[]): Promise<T[]> {
