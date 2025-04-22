@@ -1,13 +1,12 @@
 function reverseDegree(s: string): number {
-    let alphabet = new Map()
-    let value = 26
-    let total = 0
-    for (let i = 97; i <= 122; i++) {
-        alphabet.set(String.fromCharCode(i), value--);
-    }
-    for (let j = 0; j < s.length; j++) {
-        total += (j + 1) * alphabet.get(s[j]);
-    }
-    // todo
-    return total
-};
+  let res = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    const value = "z".charCodeAt(0) + 1 - s.charCodeAt(i);
+    res += value * (i + 1);
+  }
+
+  return res;
+}
+
+reverseDegree("zaza"); // 160
