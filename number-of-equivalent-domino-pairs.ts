@@ -1,15 +1,21 @@
 const numEquivDominoPairs = (dominoes: number[][]): number => {
-  const counts = new Array(100).fill(0);
-  let result = 0;
+  const counts = new Map<string, number>();
+  let res = 0;
 
-  const n = dominoes.length;
-  for (let i = 0; i < n; i++) {
-    const key =
-      Math.min(dominoes[i][0], dominoes[i][1]) * 10 +
-      Math.max(dominoes[i][0], dominoes[i][1]);
-    result += counts[key];
-    counts[key]++;
+  for (const [first, second] of dominoes) {
+    const key = first > second ? `${first}${second}` : `${second}${first}`;
+    let value = counts.get(key) || 0;
+    res += value;
+
+    counts.set(key, value + 1);
   }
 
-  return result;
+  return res;
 };
+numEquivDominoPairs([
+  [1, 2],
+  [1, 2],
+  [1, 1],
+  [1, 2],
+  [2, 2],
+]); // 3
