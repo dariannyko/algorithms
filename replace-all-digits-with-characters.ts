@@ -16,5 +16,3 @@ function replaceDigits(s: string): string {
 
 replaceDigits("a1c1e1");
 replaceDigits("a1b2c3d4e");
-console.log(String.fromCharCode("a".charCodeAt(0) - 97 + +"1" + 97));
-// console.log('a'.charCodeAt(0)-97 + );
