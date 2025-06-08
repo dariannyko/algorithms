@@ -1,18 +1,14 @@
 function countKDifference(nums: number[], k: number): number {
-  const countMap = new Map<number, number>();
+  let count = 0;
+  const n = nums.length;
 
-  let result = 0;
-  for (const num of nums) {
-    const plusCount = countMap.get(num + k) ?? 0;
-    const minusCount = countMap.get(num - k) ?? 0;
-
-    if (plusCount || minusCount) {
-      result += plusCount + minusCount;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = i + 1; j < n; j++) {
+      if (Math.abs(nums[i] - nums[j]) === k) {
+        count++;
+      }
     }
-
-    const count = countMap.get(num) ?? 0;
-    countMap.set(num, count + 1);
   }
 
-  return result;
+  return count;
 }
