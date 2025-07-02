@@ -1,20 +1,19 @@
 function findLHS(nums: number[]): number {
-  let result = 0;
-  const countMap = new Map<number, number>();
+  const map = new Map();
+  let res = 0;
 
-  nums.forEach(num => {
-    if (!countMap.has(num)) {
-      countMap.set(num, 1);
-    } else {
-      countMap.set(num, countMap.get(num) + 1);
-    }
-  })
-
-  for (const num of countMap.keys()) {
-    if (!countMap.has(num + 1)) continue;
-
-    result = Math.max(result, countMap.get(num) + countMap.get(num + 1));
+  for (let num of nums) {
+    map.set(num, (map.get(num) || 0) + 1);
   }
 
-  return result;
-};
+  for (let num of map.keys()) {
+    const next = map.get(num + 1);
+
+    if (next === undefined) continue;
+    res = Math.max(map.get(num) + next, res);
+  }
+
+  return res;
+}
+
+findLHS([1, 3, 2, 2, 5, 2, 3, 7]);
