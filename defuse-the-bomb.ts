@@ -14,7 +14,6 @@ function decrypt(code: number[], k: number): number[] {
       }
     }
   }
-  console.log(res);
 
   return res;
 }
