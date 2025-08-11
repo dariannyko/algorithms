@@ -10,7 +10,6 @@ function generate(numRows: number): number[][] {
 
     triangle[i] = row;
   }
-
   return triangle;
 }
 
