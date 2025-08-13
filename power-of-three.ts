@@ -1,8 +1,9 @@
 function isPowerOfThree(n: number): boolean {
-  const pow = Math.floor(Math.log(n) / Math.log(3));
-console.log(pow);
-
-  return pow === 3;
+  if (n <= 0) return false;
+  while (n % 3 === 0) {
+    n /= 3;
+  }
+  return n === 1;
 }
 
 isPowerOfThree(9); // true
