@@ -8,3 +8,4 @@ function findClosest(x: number, y: number, z: number): number {
 }
 
 findClosest(2, 7, 4); // 1
+findClosest(1, 5, 3); // 0
