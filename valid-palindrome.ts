@@ -1,10 +1,7 @@
-const allowedChars = (char: string) => {
-  return (
-    (char >= "A" && char <= "Z") ||
-    (char >= "a" && char <= "z") ||
-    (char >= "0" && char <= "9")
-  );
-};
+const allowedChars = (char: string) =>
+  (char >= "A" && char <= "Z") ||
+  (char >= "a" && char <= "z") ||
+  (char >= "0" && char <= "9");
 
 function isPalindrome(s: string): boolean {
   let start = 0;
