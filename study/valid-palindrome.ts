@@ -1,3 +1,4 @@
+// #2
 const allowedChars = (char: string) =>
   (char >= "A" && char <= "Z") ||
   (char >= "a" && char <= "z") ||
