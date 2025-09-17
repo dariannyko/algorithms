@@ -1,12 +1,13 @@
 // #5
 function sortedSquares(nums: number[]): number[] {
-  const size = nums.length;
-  const res = new Array(size);
+  const n = nums.length;
+
+  const res = new Array(nums.length);
 
   let start = 0;
-  let end = nums.length - 1;
+  let end = n - 1;
 
-  for (let i = size; i >= 0; i--) {
+  for (let i = n - 1; i >= 0; i--) {
     const startSquare = nums[start] ** 2;
     const endSquare = nums[end] ** 2;
 
@@ -18,6 +19,7 @@ function sortedSquares(nums: number[]): number[] {
       end--;
     }
   }
+
   return res;
 }
 
