@@ -7,3 +7,9 @@ function destCity(paths: string[][]): string {
     if (!map.has(value)) return value;
   }
 }
+
+destCity([
+  ["B", "C"],
+  ["D", "B"],
+  ["C", "A"],
+]);
