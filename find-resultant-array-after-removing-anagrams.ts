@@ -13,3 +13,4 @@ function removeAnagrams(words: string[]): string[] {
 }
 
 removeAnagrams(["abba", "baba", "bbaa", "cd", "cd"]); // ["abba","cd"]
+removeAnagrams(["a", "b", "c", "d", "e"]); // ["a","b","c","d","e"]
