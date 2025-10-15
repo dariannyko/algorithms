@@ -1,3 +1,4 @@
+// #9
 function isSubsequence(s: string, t: string): boolean {
   let substrInd = 0;
 
