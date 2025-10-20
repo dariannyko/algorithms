@@ -12,3 +12,4 @@ function finalValueAfterOperations(operations: string[]): number {
   return count;
 }
 finalValueAfterOperations(["--X", "X++", "X++"]); // 1
+finalValueAfterOperations(["X++", "++X", "--X", "X--"]); // 0
