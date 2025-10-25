@@ -6,3 +6,5 @@ function totalMoney(n: number) {
   }
   return res;
 }
+
+totalMoney(4); // 10
