@@ -14,3 +14,4 @@ function getSneakyNumbers(nums: number[]): number[] {
 }
 
 getSneakyNumbers([7, 1, 5, 4, 3, 4, 6, 0, 9, 5, 8, 2]); // [ 4, 5 ]
+getSneakyNumbers([0, 3, 2, 1, 3, 2]);
