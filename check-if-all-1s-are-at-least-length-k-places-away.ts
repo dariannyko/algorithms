@@ -10,5 +10,4 @@ function kLengthApart(nums: number[], k: number): boolean {
   return true;
 }
 
-kLengthApart([1, 0, 1], 2);
-
+kLengthApart([1, 0, 0, 1, 0, 1], 2); // false
