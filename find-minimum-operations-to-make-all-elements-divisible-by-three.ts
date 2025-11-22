@@ -7,3 +7,4 @@ function minimumOperations(nums: number[]): number {
 }
 
 minimumOperations([1, 2, 3, 4]); // 3
+minimumOperations([3, 6, 9]); // 0
