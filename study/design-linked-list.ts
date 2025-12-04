@@ -5,7 +5,7 @@ interface Node {
 }
 
 class MyLinkedList {
-  head: Node;
+  head: Node | null;
   size: number;
 
   constructor() {
@@ -24,8 +24,7 @@ class MyLinkedList {
 
   get(index: number): number {
     const node = this.getNode(index);
-
-    return node?.val || -1;
+    return node ? node.val : -1;
   }
 
   addAtHead(val: number): void {
@@ -35,31 +34,57 @@ class MyLinkedList {
   }
 
   addAtTail(val: number): void {
-    const node = this.getNode(this.size - 1);
+    if (this.size === 0) {
+      this.addAtHead(val);
+      return;
+    }
 
-    if (node) node.next = { val, next: null };
+    const node = this.getNode(this.size - 1);
+    if (node) {
+      node.next = { val, next: null };
+      this.size++;
+    }
   }
 
   addAtIndex(index: number, val: number): void {
     if (index < 0 || index > this.size) return;
 
+    if (index === 0) {
+      this.addAtHead(val);
+      return;
+    }
     if (index === this.size) {
       this.addAtTail(val);
-
       return;
     }
 
-    let node = this.getNode(index);
-    if (node) node?.next = { val, next: node.next };
+    let node = this.getNode(index - 1);
+    if (node) {
+      node.next = { val, next: node.next };
+      this.size++;
+    }
   }
 
-  deleteAtIndex(index: number): void {}
+  deleteAtIndex(index: number): void {
+    if (index < 0 || index >= this.size || this.size === 0) return;
+    if (index === 0) {
+      this.head = this.head.next;
+      this.size--;
+      return;
+    }
+    const node = this.getNode(index - 1);
+    if (node) node.next = node?.next?.next || null;
+    this.size--;
+  }
 }
 
 //  Your MyLinkedList object will be instantiated and called as such:
 var obj = new MyLinkedList();
-var param_1 = obj.get(1);
-obj.addAtHead(val);
-obj.addAtTail(val);
-obj.addAtIndex(index, val);
-obj.deleteAtIndex(index);
+// var param_1 = obj.get(1);
+obj.addAtHead(1);
+obj.addAtTail(3);
+obj.addAtIndex(1, 2);
+obj.get(1);
+obj.deleteAtIndex(0);
+obj.get(0);
+console.log(obj);
