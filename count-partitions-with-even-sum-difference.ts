@@ -14,3 +14,4 @@ function countPartitions(nums: number[]): number {
 }
 
 countPartitions([10, 10, 3, 7, 6]); // 4
+countPartitions([1, 2, 2]); // 0
