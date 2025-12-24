@@ -1,15 +1,18 @@
 function minimumBoxes(apple: number[], capacity: number[]): number {
-  let sum = apple.reduce((sum, item) => sum + item, 0);
-  let minBoxes = 0;
-
   capacity.sort((a, b) => b - a);
 
-  for (let i = 0; i < capacity.length && sum > 0; i++) {
-    sum -= capacity[i];
-    minBoxes++;
+  let apples = apple.reduce((prev, sum) => prev + sum, 0);
+
+  for (let i = 0; i < capacity.length; i++) {
+    apples -= capacity[i];
+
+    if (apples <= 0) {
+      return i + 1;
+    }
   }
 
-  return minBoxes;
+  return 0;
 }
 
-minimumBoxes([1, 3, 2], [4, 3, 1, 5, 2]) // 2
+minimumBoxes([1, 3, 2], [4, 3, 1, 5, 2]); // 2
+minimumBoxes([9, 8, 8, 2, 3, 1, 6], [10, 1, 4, 10, 8, 5]); // 5
