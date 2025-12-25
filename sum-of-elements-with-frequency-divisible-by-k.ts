@@ -1,13 +1,17 @@
 function sumDivisibleByK(nums: number[], k: number): number {
-  let mymap: Map<number, number> = new Map();
+  const map = new Map<number, number>();
+  let sum = 0;
+
   for (const num of nums) {
-    mymap.set(num, (mymap.get(num) | 0) + 1);
+    map.set(num, (map.get(num) || 0) + 1);
   }
-  let sum: number = 0;
-  mymap.forEach((value, key) => {
-    if (value % k == 0) {
-      sum += value * key;
-    }
-  });
+
+  for (const [key, value] of map) {
+    if (value % k === 0) sum += key * value;
+  }
+
   return sum;
 }
+
+// sumDivisibleByK([1, 2, 2, 3, 3, 3, 3, 4], 2);
+sumDivisibleByK([4, 4, 4, 1, 2, 3], 3);
