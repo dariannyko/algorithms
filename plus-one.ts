@@ -13,4 +13,4 @@ function plusOne(digits: number[]): number[] {
   return digits;
 }
 
-console.log(plusOne([9, 9])); // [1, 0, 0]
+plusOne([9, 9]); // [1, 0, 0]
