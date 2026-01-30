@@ -20,7 +20,6 @@ const getMiddleNode = (head: ListNode | null) => {
     fast = fast.next.next;
     slow = slow!.next;
   }
-  // when fast make the end, slow is at the middle, cause is going doubly faster
   return slow;
 };
 
