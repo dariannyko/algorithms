@@ -16,3 +16,5 @@ function isTrionic(nums: number[]): boolean {
 
   return count === 3;
 }
+
+isTrionic([1, 3, 5, 4, 2, 6]); // true
