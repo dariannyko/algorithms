@@ -1,40 +1,43 @@
 const reverseList = (head: ListNode | null) => {
-  let previous = null;
+  let prev = null;
   let current = head;
 
-  while (current != null) {
-    const next = current.next;
-    current.next = previous;
-    previous = current;
-    current = next;
+  while (current) {
+    const tmp = current.next;
+    current.next = prev;
+
+    prev = current;
+    current = tmp;
   }
 
-  return previous;
+  return prev;
 };
 
 const getMiddleNode = (head: ListNode | null) => {
-  let fast = head,
-    slow = head;
+  if (!head?.next) return head;
 
-  while (fast !== null && fast.next !== null) {
+  let slow = head;
+  let fast = head;
+
+  while (fast?.next) {
+    slow = slow.next;
     fast = fast.next.next;
-    slow = slow!.next;
   }
+
   return slow;
 };
 
 const isPalindrome = (head: ListNode | null) => {
-  const middleList = getMiddleNode(head);
-  let current = head;
-  let reverse = reverseList(middleList);
+  const middle = getMiddleNode(head);
 
-  while (reverse !== null) {
-    if (current!.val !== reverse.val) {
-      return false;
-    }
-    reverse = reverse.next;
-    current = current!.next;
+  let second = reverseList(middle);
+  let first = head;
+
+  while (first && second) {
+    if (first.val !== second.val) return false;
+
+    first = first.next;
+    second = second.next;
   }
-
   return true;
 };
