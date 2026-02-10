@@ -1,9 +1,9 @@
 function minimumDeletions(s: string): number {
-  let res: number = 0;
-  let count: number = 0;
+  let res = 0;
+  let count = 0;
 
-  for (let c of s) {
-    if (c === "b") {
+  for (let char of s) {
+    if (char === "b") {
       count++;
     } else {
       if (count > 0) {
@@ -12,5 +12,8 @@ function minimumDeletions(s: string): number {
       }
     }
   }
+
   return res;
 }
+
+minimumDeletions("bbaaaaabb"); // 2
