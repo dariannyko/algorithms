@@ -14,3 +14,5 @@ function sortString(s: string) {
   }
   return res.map((v) => String.fromCharCode(a + v)).join("");
 }
+
+sortString("aaaabbbbcccc"); // "abccbaabccba"
