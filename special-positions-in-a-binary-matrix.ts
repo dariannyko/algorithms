@@ -17,3 +17,9 @@ function numSpecial(mat: number[][]) {
   }
   return res;
 }
+
+numSpecial([
+  [1, 0, 0],
+  [0, 0, 1],
+  [1, 0, 0],
+]); // 1
