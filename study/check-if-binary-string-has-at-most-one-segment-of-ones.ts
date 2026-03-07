@@ -6,3 +6,5 @@ function checkOnesSegment(s: string): boolean {
   }
   return true;
 }
+
+checkOnesSegment("1001"); // false
