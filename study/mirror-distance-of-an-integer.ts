@@ -1,2 +1,3 @@
-const mirrorDistance = (n: number) =>
-  Math.abs(n - +String(n).split("").reverse().join(""));
+function mirrorDistance(n: number): number {
+  return Math.abs(n - +[...n.toString()].reverse().join(""));
+}
