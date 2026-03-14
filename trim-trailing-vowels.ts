@@ -13,3 +13,5 @@ function trimTrailingVowels(s: string): string {
 
   return arr.join("");
 }
+
+trimTrailingVowels('"idea"'); // "id"
