@@ -15,3 +15,11 @@ function nearestValidPoint(x: number, y: number, points: number[][]): number {
   }
   return smallIndex;
 }
+
+nearestValidPoint(3, 4, [
+  [1, 2],
+  [3, 1],
+  [2, 4],
+  [2, 3],
+  [4, 4],
+]); // 2
