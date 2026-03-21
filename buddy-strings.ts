@@ -8,3 +8,5 @@ function buddyStrings(s: string, t: string) {
   const [i, j] = diff;
   return diff.length == 2 && s[i] === t[j] && s[j] == t[i];
 }
+
+buddyStrings("ab", "ba"); // true
