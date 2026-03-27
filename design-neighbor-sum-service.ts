@@ -5,3 +5,4 @@ class NeighborSum {
 
   diagonalSum(value: number): number {}
 }
+// ??
