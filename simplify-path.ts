@@ -1,8 +1,7 @@
 function simplifyPath(path: string): string {
-  const pathArr = path.split("/");
   const res: string[] = [];
 
-  for (let part of pathArr) {
+  for (let part of path.split("/")) {
     if (!part || part == ".") {
       continue;
     }
