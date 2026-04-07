@@ -1,5 +1,3 @@
-// removing-stars-from-a-string
-
 function removeStars(s: string): string {
   const stack: string[] = [];
 
