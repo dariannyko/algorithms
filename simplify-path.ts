@@ -15,5 +15,4 @@ function simplifyPath(path: string): string {
   return `/${res.join("/")}`;
 }
 
-simplifyPath("/a/./b/../../c/"); // /c
 simplifyPath("/home/user/Documents/../../usr/local/bin"); // /home/usr/local/bin
