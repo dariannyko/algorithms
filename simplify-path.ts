@@ -1,17 +1,17 @@
 function simplifyPath(path: string): string {
   const res: string[] = [];
 
-  for (let part of path.split("/")) {
-    if (!part || part == ".") {
-      continue;
-    }
-    if (part == "..") {
-      res.pop();
-      continue;
-    }
-    res.push(part);
-  }
+  const splitted = path.split("/");
 
+  for (const part of splitted) {
+    if (!part || part === ".") continue;
+
+    if (part === "..") {
+      res.pop();
+    } else {
+      res.push(part);
+    }
+  }
   return `/${res.join("/")}`;
 }
 
