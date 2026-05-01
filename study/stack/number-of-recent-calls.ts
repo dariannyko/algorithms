@@ -21,3 +21,4 @@ class RecentCounter {
  * const obj = new RecentCounter()
  * const param_1 = obj.ping(t)
  */
+// [[], [1], [100], [3001], [3002]]
