@@ -5,4 +5,3 @@ function rotateString(s: string, goal: string): boolean {
 }
 
 rotateString("abcde", "cdeab"); // true
-rotateString("abcde", "abced"); // false
