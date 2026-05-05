@@ -4,6 +4,7 @@ function shuffle(nums: number[], n: number): number[] {
   for (let i = 0; i < n; i++) {
     res.push(nums[i], nums[n + i]);
   }
+
   return res;
 }
 
