@@ -10,13 +10,31 @@ class TreeNode {
   }
 }
 
+// function maxDepth(root: TreeNode | null): number {
+//   if (!root) return 0;
+
+//   const left = maxDepth(root.left);
+//   const right = maxDepth(root.right);
+
+//   return Math.max(left, right) + 1;
+// }
+
 function maxDepth(root: TreeNode | null): number {
   if (!root) return 0;
 
-  const left = maxDepth(root.left);
-  const right = maxDepth(root.right);
+  const stack: [TreeNode, number][] = [[root, 1]];
+  let res = 0;
 
-  return Math.max(left, right) + 1;
+  while (stack.length) {
+    const [node, depth] = stack.pop()!;
+
+    if (!node) continue;
+    res = Math.max(res, depth);
+
+    stack.push([node.left, depth + 1]);
+    stack.push([node.right, depth + 1]);
+  }
+  return res;
 }
 
 const tree = new TreeNode(
