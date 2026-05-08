@@ -42,5 +42,4 @@ const tree = new TreeNode(
   new TreeNode(9),
   new TreeNode(20, new TreeNode(15, new TreeNode(1)), new TreeNode(7)),
 );
-
 maxDepth(tree); // 4
