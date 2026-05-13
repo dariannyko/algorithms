@@ -59,4 +59,5 @@ const tree = new TreeNode(
     new TreeNode(4, null, new TreeNode(5, null, new TreeNode(6))),
   ),
 );
+
 minDepth(tree); // 5
