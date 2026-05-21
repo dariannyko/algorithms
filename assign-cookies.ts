@@ -10,4 +10,4 @@ function findContentChildren(g: number[], s: number[]): number {
 
   return count;
 }
-findContentChildren([1, 2, 3], [1, 1]);
+findContentChildren([1, 2, 3], [1, 1]); // 1
