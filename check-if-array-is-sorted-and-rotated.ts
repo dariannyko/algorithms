@@ -10,3 +10,4 @@ function check(nums: number[]): boolean {
 }
 
 check([2, 1, 3, 4]); // false
+check([3, 4, 5, 1, 2]); // true
