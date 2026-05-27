@@ -1,36 +1,39 @@
-function charsQuantity(word: string) {
-  const map = new Map();
+const aCode = "a".charCodeAt(0);
 
-  for (const char of word) {
-    if (char.toLowerCase() === char.toUpperCase()) continue;
+function isValid(suggested: string, letters: number[]) {
+  const l = new Array(26).fill(0);
 
-    map.set(char, (map.get(char) || 0) + 1);
+  for (const char of suggested) {
+    const code = char.charCodeAt(0) - aCode;
+    l[code]++;
   }
 
-  return map;
-}
-
-function isValid(required: any, suggested: any) {
-  for (const [char, amount] of required) {
-    if (amount > (suggested.get(char) || 0)) return false;
+  for (let i = 0; i < letters.length; i++) {
+    if (letters[i] > l[i]) return false;
   }
 
   return true;
 }
 
 function shortestCompletingWord(licensePlate: string, words: string[]): string {
-  const map = charsQuantity(licensePlate.toLowerCase());
   words.sort((a, b) => a.length - b.length);
+  const letters = new Array(26).fill(0);
+
+  for (const char of licensePlate.toLowerCase()) {
+    if (char >= "a" && char <= "z") {
+      const code = char.charCodeAt(0) - aCode;
+
+      letters[code]++;
+    }
+  }
 
   for (const word of words) {
-    const map2 = charsQuantity(word);
-
-    if (!isValid(map, map2)) continue;
-
-    return word;
+    if (isValid(word, letters)) return word;
   }
 
   return "";
 }
 
-shortestCompletingWord("1s3 PSt", ["step", "steps", "stripe", "stepple"]);
+console.log(
+  shortestCompletingWord("1s3 PSt", ["step", "steps", "stripe", "stepple"]),
+);
