@@ -13,4 +13,4 @@ function minElement(nums: number[]): number {
 }
 
 minElement([10, 12, 13, 14]); // 1
-minElement([1, 2, 3, 4]); // 1
+
