@@ -20,6 +20,5 @@ function insertIntoBST(root: TreeNode | null, val: number): TreeNode | null {
   } else {
     root.right = insertIntoBST(root.left, val);
   }
-
   return root;
 }
