@@ -21,6 +21,7 @@ function isValidBST(root: TreeNode | null): boolean {
     if (!node) continue;
 
     if (node.val <= minRange || node.val >= maxRange) return false;
+    
     stack.push([node.left, minRange, node.val]);
     stack.push([node.right, node.val, maxRange]);
   }
