@@ -10,25 +10,6 @@
 //   }
 // }
 
-// function isValidBST(root: TreeNode | null): boolean {
-//   if (!root) return false;
-
-//   const stack: [TreeNode, number, number][] = [[root, -Infinity, Infinity]];
-
-//   while (stack.length) {
-//     const [node, minRange, maxRange] = stack.pop()!;
-
-//     if (!node) continue;
-
-//     if (node.val <= minRange || node.val >= maxRange) return false;
-
-//     stack.push([node.left, minRange, node.val]);
-//     stack.push([node.right, node.val, maxRange]);
-//   }
-
-//   return true;
-// }
-
 function isValidBST(root: TreeNode | null): boolean {
   if (!root) return false;
 
@@ -46,4 +27,22 @@ function isValidBST(root: TreeNode | null): boolean {
   }
 
   return true;
+}
+
+function validate(root: TreeNode | null, min: number, max: number): boolean {
+  if (!root) {
+    return true;
+  }
+
+  if (root.val >= max || root.val <= min) {
+    return false;
+  }
+
+  return (
+    validate(root.left, min, root.val) && validate(root.right, root.val, max)
+  );
+}
+
+function isValidBST(root: TreeNode | null): boolean {
+  return validate(root, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
 }
