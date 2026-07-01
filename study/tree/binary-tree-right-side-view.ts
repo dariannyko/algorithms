@@ -10,28 +10,28 @@ class TreeNode {
   }
 }
 
-function levelOrder(root: TreeNode | null): number[][] {
+function rightSideView(root: TreeNode | null): number[] {
   if (!root) return [];
 
-  const res: number[][] = [];
-
+  const res: number[] = [];
   const q = [root];
 
   while (q.length) {
     const levelSize = q.length;
     console.log(levelSize);
-    
-    const currentLevel: number[] = [];
 
-    for (let i = 0; i < levelSize; i++) {
+    for (let i = 0; i < q.length; i++) {
       const node = q.shift();
-      if (node?.val !== null) currentLevel.push(node?.val);
+
+      //   if (i === levelSize - 1 && node) {
+      //     console.log(node.val);
+
+      //     res.push(node.val);
+      //   }
 
       if (node?.left) q.push(node.left);
       if (node?.right) q.push(node.right);
     }
-
-    res.push(currentLevel);
   }
 
   return res;
@@ -42,4 +42,4 @@ const tree = new TreeNode(
   new TreeNode(9),
   new TreeNode(20, new TreeNode(15, new TreeNode(1)), new TreeNode(7)),
 );
-console.log(levelOrder(tree)); // 4
+console.log(rightSideView(tree));
