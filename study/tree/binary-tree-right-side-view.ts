@@ -18,16 +18,13 @@ function rightSideView(root: TreeNode | null): number[] {
 
   while (q.length) {
     const levelSize = q.length;
-    console.log(levelSize);
 
-    for (let i = 0; i < q.length; i++) {
+    for (let i = 0; i < levelSize; i++) {
       const node = q.shift();
 
-      //   if (i === levelSize - 1 && node) {
-      //     console.log(node.val);
-
-      //     res.push(node.val);
-      //   }
+      if (i === levelSize - 1 && node) {
+        res.push(node.val);
+      }
 
       if (node?.left) q.push(node.left);
       if (node?.right) q.push(node.right);
@@ -37,9 +34,10 @@ function rightSideView(root: TreeNode | null): number[] {
   return res;
 }
 
-const tree = new TreeNode(
-  3,
-  new TreeNode(9),
-  new TreeNode(20, new TreeNode(15, new TreeNode(1)), new TreeNode(7)),
-);
-console.log(rightSideView(tree));
+rightSideView(
+  new TreeNode(
+    3,
+    new TreeNode(9),
+    new TreeNode(20, new TreeNode(15, new TreeNode(1)), new TreeNode(7)),
+  ),
+); // [ 3, 20, 7, 1 ]
