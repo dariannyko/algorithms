@@ -6,3 +6,5 @@ function isAdjacentDiffAtMostTwo(s: string, maxDiff = 2) {
   }
   return true;
 }
+
+isAdjacentDiffAtMostTwo("132"); // true
