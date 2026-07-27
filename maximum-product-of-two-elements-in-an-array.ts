@@ -1,14 +1,17 @@
 function maxProduct(nums: number[]): number {
-  let max = 0;
-  let seoncdMax = 0;
+  let firstMax = 0;
+  let secondMax = 0;
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] > max) {
-      seoncdMax = max;
-      max = nums[i];
-    } else if (nums[i] > seoncdMax) {
-      seoncdMax = nums[i];
+  for (const num of nums) {
+    if (num > firstMax) {
+      secondMax = firstMax;
+      firstMax = num;
+    } else if (num > secondMax) {
+      secondMax = num;
     }
   }
-  return (max - 1) * (seoncdMax - 1);
+
+  return (firstMax - 1) * (secondMax - 1);
 }
+
+maxProduct([1, 5, 4, 5]);
