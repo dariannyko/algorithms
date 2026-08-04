@@ -1,18 +1,14 @@
 function findMissingElements(nums: number[]): number[] {
-  let minNum = 101,
-    maxNum = 0;
+  nums.sort((a, b) => a - b);
 
-  for (const num of nums) {
-    minNum = Math.min(minNum, num);
-    maxNum = Math.max(maxNum, num);
+  const missing = [];
+  for (let i = 0, curNum = nums[0]; i < nums.length; i++) {
+    while (curNum !== nums[i]) {
+      missing.push(curNum++);
+    }
+
+    curNum++;
   }
 
-  const missingNumbers: number[] = [];
-  const existingNumbers = new Set(nums);
-
-  for (let num = minNum; num <= maxNum; num++) {
-    if (!existingNumbers.has(num)) missingNumbers.push(num);
-  }
-
-  return missingNumbers;
+  return missing;
 }
