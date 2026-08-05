@@ -12,3 +12,5 @@ function findMissingElements(nums: number[]): number[] {
 
   return missing;
 }
+
+findMissingElements([1, 4, 2, 5]); // [3]
