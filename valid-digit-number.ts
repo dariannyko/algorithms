@@ -4,3 +4,5 @@ function validDigit(n: number, x: number): boolean {
   const charX = x.toString();
   return firstDigit !== charX && s.includes(charX);
 }
+
+validDigit(101, 0); // true
