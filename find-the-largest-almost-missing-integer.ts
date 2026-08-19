@@ -17,3 +17,5 @@ function largestInteger(nums: number[], k: number): number {
 
   return arr.length ? Math.max(...arr) : -1;
 }
+
+largestInteger([3, 9, 2, 1, 7], 3); // 7
