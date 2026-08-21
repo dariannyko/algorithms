@@ -11,3 +11,5 @@ function resultArray(nums: number[]): number[] {
   }
   return arr1.concat(arr2);
 }
+
+resultArray([2, 1, 3]);
