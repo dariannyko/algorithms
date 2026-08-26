@@ -11,3 +11,5 @@ function missingMultiple(nums: number[], k: number): number {
     i++;
   }
 }
+
+missingMultiple([8, 2, 3, 4, 6], 2); // 10
