@@ -9,3 +9,5 @@ const countOppositeParity = (nums: number[]): number[] => {
 
   return nums;
 };
+
+countOppositeParity([1, 2, 3, 4]); // [2,1,1,0]
