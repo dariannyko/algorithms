@@ -1,13 +1,13 @@
 function concatWithReverse(nums: number[]): number[] {
-  let results = [];
+  const resLength = nums.length * 2;
+  const res = new Array(resLength).fill(0);
 
-  let rightPointer = nums.length - 1;
-
-  while (rightPointer >= 0) {
-    const num = nums[rightPointer];
-    results.push(num);
-    rightPointer--;
+  for (let i = 0; i < nums.length; i++) {
+    res[i] = nums[i];
+    res[resLength - 1 - i] = nums[i];
   }
 
-  return nums.concat(results);
+  return res;
 }
+
+concatWithReverse([1, 2, 3]);
