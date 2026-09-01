@@ -10,4 +10,4 @@ function concatWithReverse(nums: number[]): number[] {
   return res;
 }
 
-concatWithReverse([1, 2, 3]);
+concatWithReverse([1, 2, 3]); // [1,2,3,3,2,1]
