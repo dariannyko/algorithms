@@ -6,3 +6,7 @@ const uniformArray = (nums1: number[]): boolean => {
 
   return canBeAllEven || canBeAllOdd;
 };
+
+// const uniformArray = (nums1: number[]): boolean => {
+//   return true;
+// };
