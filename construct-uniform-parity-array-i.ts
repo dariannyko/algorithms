@@ -10,3 +10,5 @@ const uniformArray = (nums1: number[]): boolean => {
 // const uniformArray = (nums1: number[]): boolean => {
 //   return true;
 // };
+
+uniformArray([4, 6]); // true
