@@ -27,3 +27,5 @@ function totalNumbers(digits: number[]): number {
 
   return unique.size;
 }
+
+totalNumbers([1, 2, 3, 4]); // 12
