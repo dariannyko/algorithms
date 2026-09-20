@@ -10,3 +10,4 @@ function reverseDegree(s: string): number {
 }
 
 reverseDegree("zaza"); // 160
+reverseDegree("abc"); // 148
