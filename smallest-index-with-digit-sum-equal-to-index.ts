@@ -16,3 +16,4 @@ function smallestIndex(nums: number[]): number {
 }
 
 smallestIndex([1, 10, 11]); // 1
+smallestIndex([1, 3, 2]); // 2
