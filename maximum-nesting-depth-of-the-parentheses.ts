@@ -7,3 +7,5 @@ function maxDepth(s: string) {
   }
   return res;
 }
+
+maxDepth("()(())((()()))"); // 3
