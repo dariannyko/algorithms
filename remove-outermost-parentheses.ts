@@ -18,3 +18,5 @@ function removeOuterParentheses(s: string): string {
 
   return result;
 }
+
+removeOuterParentheses("(()())(())"); // "()()()"
