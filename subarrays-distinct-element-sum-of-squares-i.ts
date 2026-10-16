@@ -11,6 +11,6 @@ function sumCounts(nums: number[]): number {
       ans += distinct * distinct;
     }
   }
-
+  // todo
   return ans;
 }
