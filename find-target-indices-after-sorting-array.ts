@@ -10,3 +10,4 @@ function targetIndices(nums: number[], target: number): number[] {
 
   return res;
 }
+targetIndices([1, 2, 5, 2, 3], 2); // [1,2]
