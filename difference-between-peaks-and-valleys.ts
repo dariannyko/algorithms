@@ -14,3 +14,5 @@ function peakValleyDifference(nums: number[]): number {
 
   return peak - vall;
 }
+
+peakValleyDifference([1, 5, 2, 4, 1, 3, 0]); // 9
