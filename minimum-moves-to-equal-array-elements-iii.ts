@@ -10,3 +10,4 @@ function minMoves(nums: number[]): number {
   return steps;
 }
 minMoves([4, 4, 5]); // 2
+minMoves([2, 1, 3]); // 3
