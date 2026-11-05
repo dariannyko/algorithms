@@ -16,3 +16,5 @@ function findTheDistanceValue(
 
   return count;
 }
+
+findTheDistanceValue([1, 4, 2, 3], [-4, -3, 6, 10, 20, 30], 3); // 2
