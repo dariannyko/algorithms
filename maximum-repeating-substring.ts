@@ -7,3 +7,5 @@ function maxRepeating(sequence: string, word: string): number {
   }
   return count;
 }
+
+maxRepeating("ababc", "ab"); // 2
