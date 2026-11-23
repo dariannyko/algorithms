@@ -3,3 +3,5 @@ function largestOddNumber(num: string): string {
     if (num.codePointAt(i) % 2) return num.slice(0, i + 1);
   return "";
 }
+
+largestOddNumber("52"); // "5"
