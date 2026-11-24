@@ -4,4 +4,4 @@ function largestOddNumber(num: string): string {
   return "";
 }
 
-largestOddNumber("52"); // "5"
+largestOddNumber("52"); // "5maximum-subarray-with-equal-products"
